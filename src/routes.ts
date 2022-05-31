@@ -1,6 +1,5 @@
 import express  from 'express';
 import { NodemailerMailAdapter } from './adapters/nodemailer/nodemailer-mail-adapter';
-import { prisma } from './prisma'
 
 import { PrismaFeedbacksRepository } from './prisma/prisma-feedbacks-repository';
 import { SubmitFeedbackUseCase } from './use-cases/submit-feedback-use-cases';
@@ -23,8 +22,6 @@ routes.post('/feedback', async (req, res) => {
         comment,
         screenshot,
     })
-
-    
 
     return res.status(201).send()
 })
